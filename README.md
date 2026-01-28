@@ -8,10 +8,19 @@ Sistema completo e otimizado para criar dashboards personalizados no WordPress u
 📁 Panels/
 ├── 📄 README.md                             ← Você está aqui
 ├── 📄 .gitignore                            ← Configuração Git
+├── 📄 exemplo-custom-css.css                ← Template CSS customizado
 │
-├── 🎯 ARQUIVOS PRINCIPAIS (USE ESTES):
-│   ├── PanelWooCommerce-Final.html          ← HTML único standalone
-│   └── exemplo-custom-css.css               ← Template CSS customizado
+├── 📁 panels/                               ← PAINÉIS POR TIPO DE CLIENTE
+│   ├── 📄 README.md                         ← Guia de painéis
+│   ├── 📁 ecommerce/                        ← ✅ WooCommerce (pronto)
+│   │   ├── PanelWooCommerce-Final.html      ← Lojas virtuais
+│   │   └── README.md
+│   ├── 📁 blog/                             ← 🚧 Sites de conteúdo (em breve)
+│   │   └── README.md
+│   ├── 📁 portfolio/                        ← 🚧 Profissionais/Agências (em breve)
+│   │   └── README.md
+│   └── 📁 base/                             ← 🚧 Genérico (em breve)
+│       └── README.md
 │
 ├── 📁 PluginWP/
 │   └── dashboard-github-final.php           ← Plugin WordPress final
@@ -37,20 +46,25 @@ Sistema completo e otimizado para criar dashboards personalizados no WordPress u
 
 ### ✅ O que tem de bom
 
-1. **1 HTML único** - Funciona standalone ou com CSS externo
-2. **Até 3 CSS em cascata** - Bricks global + colors + custom
-3. **Cache de 12h** - Mínimo impacto no servidor (98% economia)
-4. **Sem stats fake** - Não induz cliente ao erro
-5. **Bricks nativo** - Detecta e usa variáveis automaticamente
-6. **Ultra leve** - ~12 KB HTML + ~20 KB CSS total
-7. **100% seguro** - Sem dados sensíveis (pronto para repo público)
+1. **Painéis por tipo** - E-commerce, Blog, Portfolio, Base
+2. **1 HTML por tipo** - Funciona standalone ou com CSS externo
+3. **Até 3 CSS em cascata** - Bricks global + colors + custom
+4. **Cache de 12h** - Mínimo impacto no servidor (98% economia)
+5. **Sem stats fake** - Não induz cliente ao erro
+6. **Bricks nativo** - Detecta e usa variáveis automaticamente
+7. **Ultra leve** - ~12 KB HTML + ~20 KB CSS total
+8. **100% seguro** - Sem dados sensíveis (pronto para repo público)
 
-### ❌ O que foi removido
+### 📊 Painéis Disponíveis
 
-- Stats fake (produtos: 254, pedidos: 18, etc)
-- Múltiplos HTMLs duplicados
-- Sistema confuso de path local
-- CSS único obrigatório
+| Tipo | Status | Arquivo | Para quem |
+|------|--------|---------|-----------|
+| 📦 **E-commerce** | ✅ Pronto | `panels/ecommerce/` | Lojas WooCommerce |
+| 📝 **Blog** | 🚧 Em breve | `panels/blog/` | Sites de conteúdo |
+| 🎨 **Portfolio** | 🚧 Em breve | `panels/portfolio/` | Designers/Agências |
+| 🔧 **Base** | 🚧 Em breve | `panels/base/` | Genérico |
+
+**[Ver todos os painéis →](panels/)**
 
 ## 🚀 Setup em 3 Passos
 
@@ -62,17 +76,22 @@ Sistema completo e otimizado para criar dashboards personalizados no WordPress u
 // Ative
 ```
 
-### 2. Upload HTML no GitHub
+### 2. Escolher Painel + URL GitHub
+
+**Escolha o painel certo para o tipo de cliente:**
 
 ```bash
-git add PanelWooCommerce-Final.html
-git commit -m "Dashboard WooCommerce"
-git push
-```
+# E-commerce (WooCommerce)
+https://raw.githubusercontent.com/ugprade/Panels/main/panels/ecommerce/PanelWooCommerce-Final.html
 
-Pegue a URL raw:
-```
-https://raw.githubusercontent.com/usuario/repo/main/PanelWooCommerce-Final.html
+# Blog (em breve)
+https://raw.githubusercontent.com/ugprade/Panels/main/panels/blog/PanelBlog.html
+
+# Portfolio (em breve)
+https://raw.githubusercontent.com/ugprade/Panels/main/panels/portfolio/PanelPortfolio.html
+
+# Base genérico (em breve)
+https://raw.githubusercontent.com/ugprade/Panels/main/panels/base/PanelBase.html
 ```
 
 ### 3. Configurar WordPress
@@ -80,10 +99,18 @@ https://raw.githubusercontent.com/usuario/repo/main/PanelWooCommerce-Final.html
 **WordPress > Configurações > Dashboard GitHub**
 
 ```
-HTML: https://raw.githubusercontent.com/.../painel.html
+HTML: https://raw.githubusercontent.com/ugprade/Panels/main/panels/[TIPO]/[ARQUIVO].html
 CSS 1: https://seusite.com/.../global-variables.min.css (opcional)
 CSS 2: https://seusite.com/.../color-palettes.min.css (opcional)
 CSS 3: [custom] (opcional)
+```
+
+**Exemplo para loja WooCommerce:**
+```
+HTML: https://raw.githubusercontent.com/ugprade/Panels/main/panels/ecommerce/PanelWooCommerce-Final.html
+CSS 1: https://loja.com/wp-content/uploads/bricks/css/global-variables.min.css
+CSS 2: https://loja.com/wp-content/uploads/bricks/css/color-palettes.min.css
+CSS 3: [vazio]
 ```
 
 ## 🎨 3 Modos de Uso
@@ -108,9 +135,11 @@ CSS 3: [custom] (opcional)
 
 ## 🔗 Links Úteis
 
+- **[Painéis Disponíveis](panels/)** - Veja todos os tipos de painel
 - **[Plugin WordPress](PluginWP/dashboard-github-final.php)** - Baixe e instale no Code Snippets
-- **[HTML do Dashboard](PanelWooCommerce-Final.html)** - Use a URL raw do GitHub
+- **[Painel E-commerce](panels/ecommerce/PanelWooCommerce-Final.html)** - HTML para WooCommerce
 - **[Framework CSS](FancyFramework/fancy-framework-complete.css)** - Referência completa de variáveis
+- **[Template CSS](exemplo-custom-css.css)** - Exemplo de customização CSS #3
 
 ## 🏢 Sobre
 
