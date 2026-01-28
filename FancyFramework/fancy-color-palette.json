@@ -1,0 +1,227 @@
+{
+  "id": "rxlrom",
+  "name": "Fancy",
+  "colors": [
+    {
+      "raw": "var(--primary)",
+      "id": "piamub",
+      "name": "Primary"
+    },
+    {
+      "raw": "var(--primary-trans-10)",
+      "id": "ohxpmj",
+      "name": "Primary Trans 10"
+    },
+    {
+      "raw": "var(--primary-trans-20)",
+      "id": "fjrqjx",
+      "name": "Primary Trans 20"
+    },
+    {
+      "raw": "var(--primary-trans-30)",
+      "id": "tdyfwh",
+      "name": "Primary Trans 30"
+    },
+    {
+      "raw": "var(--primary-trans-40)",
+      "id": "tighic",
+      "name": "Primary Trans 40"
+    },
+    {
+      "raw": "var(--primary-trans-50)",
+      "id": "izilll",
+      "name": "Primary Trans 50"
+    },
+    {
+      "raw": "var(--primary-trans-60)",
+      "id": "ofafzw",
+      "name": "Primary Trans 60"
+    },
+    {
+      "raw": "var(--primary-trans-70)",
+      "id": "hszkyz",
+      "name": "Primary Trans 70"
+    },
+    {
+      "raw": "var(--primary-trans-80)",
+      "id": "wkmuax",
+      "name": "Primary Trans 80"
+    },
+    {
+      "raw": "var(--primary-trans-90)",
+      "id": "didqur",
+      "name": "Primary Trans 90"
+    },
+    {
+      "raw": "var(--primary-dark)",
+      "id": "dvetvh",
+      "name": "Primary Dark"
+    },
+    {
+      "raw": "var(--primary-ultra-dark)",
+      "id": "takggh",
+      "name": "Primary Ultra Dark"
+    },
+    {
+      "raw": "var(--primary-light)",
+      "id": "xnlprf",
+      "name": "Primary Light"
+    },
+    {
+      "raw": "var(--primary-ultra-light)",
+      "id": "tbbglf",
+      "name": "Primary Ultra Light"
+    },
+    {
+      "raw": "var(--secondary)",
+      "id": "cifech",
+      "name": "Secondary"
+    },
+    {
+      "raw": "var(--secondary-ultra-dark)",
+      "id": "ttndph",
+      "name": "Secondary Ultra Dark"
+    },
+    {
+      "raw": "var(--secondary-dark)",
+      "id": "sukfzi",
+      "name": "Secondary Dark"
+    },
+    {
+      "raw": "var(--secondary-light)",
+      "id": "jnjtxf",
+      "name": "Secondary Light"
+    },
+    {
+      "raw": "var(--secondary-ultra-light)",
+      "id": "akdtvo",
+      "name": "Secondary Ultra Light"
+    },
+    {
+      "raw": "var(--base)",
+      "id": "wicnui",
+      "name": "Base"
+    },
+    {
+      "raw": "var(--base-ultra-dark)",
+      "id": "urhshe",
+      "name": "Base Ultra Dark"
+    },
+    {
+      "raw": "var(--base-ultra-dark-trans-10)",
+      "id": "dwwruu",
+      "name": "Base Ultra Dark Trans 10"
+    },
+    {
+      "raw": "var(--base-ultra-dark-trans-20)",
+      "id": "fyqedt",
+      "name": "Base Ultra Dark Trans 20"
+    },
+    {
+      "raw": "var(--base-ultra-dark-trans-30)",
+      "id": "gjhcaz",
+      "name": "Base Ultra Dark Trans 30"
+    },
+    {
+      "raw": "var(--base-ultra-dark-trans-40)",
+      "id": "kfokxa",
+      "name": "Base Ultra Dark Trans 40"
+    },
+    {
+      "raw": "var(--base-ultra-dark-trans-50)",
+      "id": "hxqgif",
+      "name": "Base Ultra Dark Trans 50"
+    },
+    {
+      "raw": "var(--base-ultra-dark-trans-60)",
+      "id": "hwwwdz",
+      "name": "Base Ultra Dark Trans 60"
+    },
+    {
+      "raw": "var(--base-ultra-dark-trans-70)",
+      "id": "hfkdze",
+      "name": "Base Ultra Dark Trans 70"
+    },
+    {
+      "raw": "var(--base-ultra-dark-trans-80)",
+      "id": "gzraas",
+      "name": "Base Ultra Dark Trans 80"
+    },
+    {
+      "raw": "var(--base-ultra-dark-trans-90)",
+      "id": "yvrpek",
+      "name": "Base Ultra Dark Trans 90"
+    },
+    {
+      "raw": "var(--base-dark)",
+      "id": "grhrib",
+      "name": "Base Dark"
+    },
+    {
+      "raw": "var(--base-light)",
+      "id": "tcvtfr",
+      "name": "Base Light"
+    },
+    {
+      "raw": "var(--base-ultra-light)",
+      "id": "tmmnmg",
+      "name": "Base Ultra Light"
+    },
+    {
+      "raw": "var(--white)",
+      "id": "alggob",
+      "name": "White"
+    },
+    {
+      "raw": "var(--white-trans-10)",
+      "id": "ffdzjj",
+      "name": "White Trans 10"
+    },
+    {
+      "raw": "var(--white-trans-20)",
+      "id": "nkeyfj",
+      "name": "White Trans 20"
+    },
+    {
+      "raw": "var(--white-trans-30)",
+      "id": "zdnfcb",
+      "name": "White Trans 30"
+    },
+    {
+      "raw": "var(--white-trans-40)",
+      "id": "jtskfi",
+      "name": "White Trans 40"
+    },
+    {
+      "raw": "var(--white-trans-50)",
+      "id": "sdquvt",
+      "name": "White Trans 50"
+    },
+    {
+      "raw": "var(--white-trans-60)",
+      "id": "wrgomw",
+      "name": "White Trans 60"
+    },
+    {
+      "raw": "var(--white-trans-70)",
+      "id": "qudqvt",
+      "name": "White Trans 70"
+    },
+    {
+      "raw": "var(--white-trans-80)",
+      "id": "gzvzdi",
+      "name": "White Trans 80"
+    },
+    {
+      "raw": "var(--white-trans-90)",
+      "id": "orvscg",
+      "name": "White Trans 90"
+    },
+    {
+      "raw": "var(--black)",
+      "id": "ujlnpw",
+      "name": "Black"
+    }
+  ],
+  "default": true
+}

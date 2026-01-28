@@ -1,0 +1,276 @@
+/*
+ * Fancy Framework - Complete CSS Variables
+ * Compiled from fancy-variables.json, fancy-color-palette.json and framework.css
+ */
+
+:root {
+  /* Spacing Variables */
+  --space-xs: clamp(0.56rem, calc(0.56rem + 0.0022 * (100vw - 380px)), 0.69rem);
+  --space-s: clamp(0.81rem, calc(0.81rem + 0.0033 * (100vw - 380px)), 1.00rem);
+  --space-m: clamp(1.25rem, calc(1.25rem + 0.0044 * (100vw - 380px)), 1.50rem);
+  --space-l: clamp(1.88rem, calc(1.88rem + 0.0067 * (100vw - 380px)), 2.25rem);
+  --space-xl: clamp(2.81rem, calc(2.81rem + 0.0100 * (100vw - 380px)), 3.38rem);
+  --space-xxl: clamp(4.25rem, calc(4.25rem + 0.0144 * (100vw - 380px)), 5.06rem);
+  --space-section: clamp(6.25rem, calc(6.25rem + 0.0222 * (100vw - 380px)), 7.50rem);
+  --logo-width: clamp(7.50rem, calc(7.50rem + 0.0889 * (100vw - 380px)), 12.50rem);
+
+  /* Typography - Headings */
+  --h1: clamp(2.75rem, calc(2.75rem + 0.0122 * (100vw - 380px)), 3.44rem);
+  --h2: clamp(2.19rem, calc(2.19rem + 0.0100 * (100vw - 380px)), 2.75rem);
+  --h3: clamp(1.75rem, calc(1.75rem + 0.0078 * (100vw - 380px)), 2.19rem);
+  --h4: clamp(1.38rem, calc(1.38rem + 0.0067 * (100vw - 380px)), 1.75rem);
+  --h5: clamp(1.13rem, calc(1.13rem + 0.0044 * (100vw - 380px)), 1.38rem);
+  --h6: clamp(0.88rem, calc(0.88rem + 0.0044 * (100vw - 380px)), 1.13rem);
+
+  /* Typography - Text Sizes */
+  --text-xs: clamp(0.63rem, calc(0.63rem + 0.0022 * (100vw - 380px)), 0.75rem);
+  --text-s: clamp(0.81rem, calc(0.81rem + 0.0011 * (100vw - 380px)), 0.88rem);
+  --text-m: clamp(1.00rem, calc(1.00rem + 0.0022 * (100vw - 380px)), 1.13rem);
+  --text-mm: clamp(1.13rem, calc(1.13rem + 0.0022 * (100vw - 380px)), 1.25rem);
+  --text-l: clamp(1.25rem, calc(1.25rem + 0.0033 * (100vw - 380px)), 1.44rem);
+  --text-xl: clamp(1.56rem, calc(1.56rem + 0.0033 * (100vw - 380px)), 1.75rem);
+  --text-xxl: clamp(1.94rem, calc(1.94rem + 0.0044 * (100vw - 380px)), 2.19rem);
+
+  /* Gaps and Padding */
+  --grid-gap: var(--space-xl) var(--space-l);
+  --grid-gap-s: var(--space-l) var(--space-m);
+  --card-gap: var(--space-m);
+  --content-gap: calc(var(--space-m) * 1.5);
+  --container-gap: var(--space-xxl);
+  --padding-section: var(--space-section) var(--space-m);
+  --offset: 80px;
+
+  /* Typography Styles */
+  --text-line-height: calc(10px + 2ex);
+  --heading-line-height: calc(7px + 2ex);
+  --text-font-weight: 400;
+  --heading-font-weight: 600;
+  --text-color: var(--base);
+  --heading-color: var(--base-ultra-dark);
+
+  /* Border Radius */
+  --radius: 20px;
+  --radius-inside: calc(var(--radius) * 0.5);
+  --radius-outside: calc(var(--radius) * 1.4);
+  --radius-btn: .3em;
+  --radius-pill: 9999px;
+  --radius-circle: 50%;
+  --radius-s: 14px;
+  --radius-m: 20px;
+  --radius-l: 30px;
+  --radius-xl: 45px;
+  --border-color: var(--base-light);
+
+  /* Container Sizes */
+  --container-width: 1280px;
+  --container-min-width: 380px;
+  --max-width: 980px;
+  --max-width-m: 840px;
+  --max-width-s: 640px;
+  --min-height: 340px;
+  --min-height-section: 540px;
+
+  /* Colors - Primary */
+  --primary: #8338ec;
+  --primary-trans-10: rgba(131, 56, 236, 0.1);
+  --primary-trans-20: rgba(131, 56, 236, 0.2);
+  --primary-trans-30: rgba(131, 56, 236, 0.3);
+  --primary-trans-40: rgba(131, 56, 236, 0.4);
+  --primary-trans-50: rgba(131, 56, 236, 0.5);
+  --primary-trans-60: rgba(131, 56, 236, 0.6);
+  --primary-trans-70: rgba(131, 56, 236, 0.7);
+  --primary-trans-80: rgba(131, 56, 236, 0.8);
+  --primary-trans-90: rgba(131, 56, 236, 0.9);
+  --primary-dark: #692dbd;
+  --primary-ultra-dark: #4f228e;
+  --primary-light: #ece1fc;
+  --primary-ultra-light: #f9f5fe;
+
+  /* Colors - Secondary */
+  --secondary: #ffbe0b;
+  --secondary-ultra-dark: #997207;
+  --secondary-dark: #cc9809;
+  --secondary-light: #fff5da;
+  --secondary-ultra-light: #fffcf3;
+
+  /* Colors - Base */
+  --base: #4d4d66;
+  --base-ultra-dark: #2e2e3d;
+  --base-ultra-dark-trans-10: rgba(46, 46, 61, 0.1);
+  --base-ultra-dark-trans-20: rgba(46, 46, 61, 0.2);
+  --base-ultra-dark-trans-30: rgba(46, 46, 61, 0.3);
+  --base-ultra-dark-trans-40: rgba(46, 46, 61, 0.4);
+  --base-ultra-dark-trans-50: rgba(46, 46, 61, 0.5);
+  --base-ultra-dark-trans-60: rgba(46, 46, 61, 0.6);
+  --base-ultra-dark-trans-70: rgba(46, 46, 61, 0.7);
+  --base-ultra-dark-trans-80: rgba(46, 46, 61, 0.8);
+  --base-ultra-dark-trans-90: rgba(46, 46, 61, 0.9);
+  --base-dark: #3e3e52;
+  --base-light: #e4e4e8;
+  --base-ultra-light: #f6f6f7;
+
+  /* Colors - White */
+  --white: #ffffff;
+  --white-trans-10: rgba(255, 255, 255, 0.1);
+  --white-trans-20: rgba(255, 255, 255, 0.2);
+  --white-trans-30: rgba(255, 255, 255, 0.3);
+  --white-trans-40: rgba(255, 255, 255, 0.4);
+  --white-trans-50: rgba(255, 255, 255, 0.5);
+  --white-trans-60: rgba(255, 255, 255, 0.6);
+  --white-trans-70: rgba(255, 255, 255, 0.7);
+  --white-trans-80: rgba(255, 255, 255, 0.8);
+  --white-trans-90: rgba(255, 255, 255, 0.9);
+
+  /* Colors - Black */
+  --black: #000000;
+
+  /* Grid Templates */
+  --grid-1: repeat(1, minmax(0, 1fr));
+  --grid-2: repeat(2, minmax(0, 1fr));
+  --grid-3: repeat(3, minmax(0, 1fr));
+  --grid-4: repeat(4, minmax(0, 1fr));
+  --grid-5: repeat(5, minmax(0, 1fr));
+  --grid-6: repeat(6, minmax(0, 1fr));
+  --grid-7: repeat(7, minmax(0, 1fr));
+  --grid-8: repeat(8, minmax(0, 1fr));
+  --grid-9: repeat(9, minmax(0, 1fr));
+  --grid-10: repeat(10, minmax(0, 1fr));
+  --grid-11: repeat(11, minmax(0, 1fr));
+  --grid-12: repeat(12, minmax(0, 1fr));
+
+  /* Grid Templates - Custom Ratios */
+  --grid-1-2: minmax(0, 1fr) minmax(0, 2fr);
+  --grid-1-3: minmax(0, 1fr) minmax(0, 3fr);
+  --grid-1-4: minmax(0, 1fr) minmax(0, 4fr);
+  --grid-2-1: minmax(0, 2fr) minmax(0, 1fr);
+  --grid-2-3: minmax(0, 2fr) minmax(0, 3fr);
+  --grid-2-4: minmax(0, 2fr) minmax(0, 4fr);
+  --grid-3-1: minmax(0, 3fr) minmax(0, 1fr);
+  --grid-3-2: minmax(0, 3fr) minmax(0, 2fr);
+  --grid-3-4: minmax(0, 3fr) minmax(0, 4fr);
+  --grid-4-1: minmax(0, 4fr) minmax(0, 1fr);
+  --grid-4-2: minmax(0, 4fr) minmax(0, 2fr);
+  --grid-4-3: minmax(0, 4fr) minmax(0, 3fr);
+}
+
+/* ========================================
+   Framework Styles
+   ======================================== */
+
+/* Scroll Behavior */
+[id] {
+  scroll-margin-top: calc(var(--offset) / 1.6);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Accessibility */
+body.bricks-is-frontend :focus {
+  outline: none;
+}
+
+body.bricks-is-frontend :focus-visible {
+  outline: solid 1px var(--primary);
+  outline-offset: 5px;
+  transition: all .3s;
+}
+
+/* Normalize */
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.bricks-nav-menu {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Typography */
+body {
+  font-size: var(--text-m);
+  color: var(--text-color);
+}
+
+:where(p), :where(span) {
+  line-height: var(--text-line-height);
+}
+
+:where(p) {
+  font-weight: var(--text-font-weight);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: var(--heading-line-height);
+  color: var(--heading-color);
+  font-weight: var(--heading-font-weight);
+}
+
+h1 {
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+h3 {
+  font-size: var(--h3);
+}
+
+h4 {
+  font-size: var(--h4);
+}
+
+h5 {
+  font-size: var(--h5);
+}
+
+h6 {
+  font-size: var(--h6);
+}
+
+/* Containers */
+:where(section:not(section section)) {
+  padding: var(--padding-section);
+}
+
+section:where(:not(.bricks-shape-divider)) {
+  gap: var(--container-gap);
+}
+
+:where(.brxe-container) > .brxe-block, :where(.brxe-container) {
+  gap: var(--content-gap);
+}
+
+/* Fix Overflow */
+.bricks-is-frontend header {
+  max-width: 100vw;
+}
+
+body.bricks-is-frontend {
+  overflow-x: clip;
+}
+
+body.bricks-is-frontend.no-scroll {
+  overflow: hidden !important;
+}
+
+/* Custom Links */
+body .brxe-post-content a:not([class]),
+body .brxe-text a:not([class]),
+body label a {
+  text-decoration-line: underline;
+  text-decoration-color: var(--primary);
+  text-underline-offset: .2em;
+  text-decoration-thickness: 1px;
+  transition: all .3s;
+}
+
+body .brxe-post-content a:hover:not([class]),
+body .brxe-text a:hover:not([class]),
+body label a:hover {
+  color: var(--primary);
+}
