@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle</title>
+    <!-- Importando Google Fonts: Inter (usada nos textos) e Material Symbols (ícones) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- Arquivo de Estilo Externo -->
+    <style>
+        /* Reset e Configurações Globais */
+:root {
+    /* Paleta de Cores Modernas */
+    --color-bg: #f3f4f6;
+    --color-surface: #ffffff;
+    --color-text-primary: #111827;
+    --color-text-secondary: #4b5563;
+    --color-accent: #2563eb;
+    
+    /* Tipografia */
+    --font-primary: 'Inter', sans-serif;
+    
+    /* Espaçamento e Layout */
+    --radius-lg: 16px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    --shadow-hover: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%; /* Define 1rem = 16px */
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-primary);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Layout Principal */
+.panel-layout {
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tipografia */
+h1, .h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin: 2rem 0;
+    letter-spacing: -0.05rem;
+}
+
+h2, .h2, .section-title {
+    font-size: 2.4rem;
+    color: var(--color-text-primary);
+    font-weight: 600;
+    margin: 0 0 1.5rem 0;
+    letter-spacing: -0.03rem;
+}
+
+h3, .h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+
+/* Grids */
+.grid-container {
+    display: grid;
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Grid de 4 colunas (Produtos) */
+.cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Grid de 3 colunas (Pedidos e Site) */
+.cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Responsividade básica */
+@media (max-width: 1024px) {
+    .cols-4, .cols-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .cols-4, .cols-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Cards (Botões) */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-surface);
+    padding: 3rem 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.02);
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(0,0,0,0.05);
+}
+
+.card-text {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 1.5rem;
+}
+
+/* Ícones Material Symbols */
+.material-symbols-outlined {
+    font-size: 4rem;
+    color: var(--color-text-primary);
+    transition: color 0.3s ease;
+}
+
+.card:hover .material-symbols-outlined {
+    color: var(--color-accent);
+}
+        </style>
+</head>
+<body>
+
+    <section id="zklsaj" class="panel-layout">
+        <!-- Seção: Gestão de Produtos -->
+        <div id="rxlhpo">
+            <h2 class="section-title" id="fwuroo">Gestão de Produtos</h2>
+            <div class="grid-container cols-4" id="rwakyn">
+                <a href="/wp-admin/post-new.php?post_type=product" class="card"><div class="card-text">Adicionar Produtos</div><span class="material-symbols-outlined">post_add</span></a>
+                <a href="/wp-admin/edit.php?post_type=product" class="card"><div class="card-text">Lista de Produtos</div><span class="material-symbols-outlined">post</span></a>
+                <a href="/wp-admin/edit-tags.php?taxonomy=product_cat&post_type=product" class="card"><div class="card-text">Gerenciar Categorias</div><span class="material-symbols-outlined">category</span></a>
+                <a href="/wp-admin/edit-tags.php?taxonomy=product_brand&post_type=product" class="card"><div class="card-text">Gerenciar Marcas</div><span class="material-symbols-outlined">brand_family</span></a>
+                <a href="/wp-admin/edit.php?post_type=product&page=product-reviews" class="card"><div class="card-text">Avaliações dos Produtos</div><span class="material-symbols-outlined">reviews</span></a>
+            </div>
+        </div>
+
+        <!-- Seção: Gestão de Pedidos -->
+        <div id="xreagj">
+            <h2 class="section-title" id="nvajwi">Gestão de Pedidos</h2>
+            <div class="grid-container cols-3" id="cnvkac">
+                <a href="/wp-admin/admin.php?page=wc-orders" class="card"><div class="card-text">Lista de Pedidos</div><span class="material-symbols-outlined">receipt</span></a>
+                <a href="/wp-admin/admin.php?page=wc-admin&path=%2Fcustomers" class="card"><div class="card-text">Lista de Clientes</div><span class="material-symbols-outlined">badge</span></a>
+            </div>
+        </div>
+
+        <!-- Seção: Gestão do Site -->
+        <div id="mfrjur">
+            <h2 class="section-title" id="tcvtbm">Gestão do Site</h2>
+            <div class="grid-container cols-3" id="rldili">
+                <a href="/wp-admin/post-new.php?post_type=banners_homepage" class="card"><div class="card-text">Adicionar Banners</div><span class="material-symbols-outlined">add_photo_alternate</span></a>
+                <a href="/wp-admin/edit.php?post_type=banners_homepage" class="card"><div class="card-text">Ver Lista de Banners</div><span class="material-symbols-outlined">image</span></a>
+                <a href="/wp-admin/admin.php?page=configuracoes_opt" class="card"><div class="card-text">Configurações, dados e textos</div><span class="material-symbols-outlined">settings</span></a>
+                <a href="/wp-admin/options-permalink.php" class="card"><div class="card-text">Links Permanentes</div><span class="material-symbols-outlined">settings</span></a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

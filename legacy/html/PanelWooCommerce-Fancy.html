@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle WooCommerce</title>
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- Fancy Framework -->
+    <link rel="stylesheet" href="FancyFramework/fancy-framework-complete.css">
+
+    <style>
+        /* Custom Styles for Panel */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--base-ultra-light) 0%, var(--primary-ultra-light) 100%);
+            min-height: 100vh;
+            padding: var(--space-m);
+        }
+
+        /* Header */
+        .panel-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+            padding: var(--space-l) 0;
+        }
+
+        .panel-title {
+            font-size: var(--h1);
+            color: var(--heading-color);
+            font-weight: var(--heading-font-weight);
+            line-height: var(--heading-line-height);
+            margin: 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .panel-subtitle {
+            font-size: var(--text-l);
+            color: var(--text-color);
+            margin-top: var(--space-s);
+            font-weight: 400;
+        }
+
+        /* Container */
+        .panel-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        /* Section */
+        .panel-section {
+            margin-bottom: var(--space-xxl);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-s);
+            margin-bottom: var(--space-l);
+            padding-bottom: var(--space-s);
+            border-bottom: 2px solid var(--primary-trans-20);
+        }
+
+        .section-icon {
+            font-size: 3.2rem !important;
+            color: var(--primary);
+        }
+
+        .section-title {
+            font-size: var(--h2);
+            color: var(--heading-color);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Grid */
+        .panel-grid {
+            display: grid;
+            gap: var(--space-l);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        /* Cards */
+        .panel-card {
+            background: var(--white);
+            border-radius: var(--radius-l);
+            padding: var(--space-l);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: var(--space-m);
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px var(--base-ultra-dark-trans-10);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .panel-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .panel-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-trans-30);
+            box-shadow: 0 20px 25px -5px var(--base-ultra-dark-trans-20),
+                        0 10px 10px -5px var(--base-ultra-dark-trans-10);
+        }
+
+        .panel-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .panel-card:active {
+            transform: translateY(-4px);
+        }
+
+        .card-icon {
+            font-size: 5.6rem !important;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .panel-card:hover .card-icon {
+            color: var(--primary-dark);
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .card-title {
+            font-size: var(--text-l);
+            font-weight: 600;
+            color: var(--heading-color);
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .card-description {
+            font-size: var(--text-s);
+            color: var(--text-color);
+            line-height: var(--text-line-height);
+            margin: 0;
+            opacity: 0.8;
+        }
+
+        /* Badge */
+        .card-badge {
+            position: absolute;
+            top: var(--space-s);
+            right: var(--space-s);
+            background: var(--secondary);
+            color: var(--base-ultra-dark);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--radius-pill);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-m);
+            margin-bottom: var(--space-xl);
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: var(--space-l);
+            border-radius: var(--radius-m);
+            text-align: center;
+            box-shadow: 0 4px 6px var(--primary-trans-30);
+        }
+
+        .stat-value {
+            font-size: var(--h2);
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .stat-label {
+            font-size: var(--text-s);
+            opacity: 0.9;
+            margin-top: var(--space-xs);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .panel-title {
+                font-size: var(--h2);
+            }
+
+            .panel-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: var(--space-s);
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="panel-container">
+        <!-- Header -->
+        <header class="panel-header">
+            <h1 class="panel-title">Painel de Controle</h1>
+            <p class="panel-subtitle">Gerencie sua loja WooCommerce de forma eficiente</p>
+        </header>
+
+        <!-- Quick Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <p class="stat-value">254</p>
+                <p class="stat-label">Produtos Ativos</p>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);">
+                <p class="stat-value">18</p>
+                <p class="stat-label">Pedidos Hoje</p>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, var(--base) 0%, var(--base-dark) 100%);">
+                <p class="stat-value">1.2k</p>
+                <p class="stat-label">Clientes</p>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                <p class="stat-value">R$ 45k</p>
+                <p class="stat-label">Vendas do Mês</p>
+            </div>
+        </div>
+
+        <!-- Gestão de Produtos -->
+        <section class="panel-section">
+            <div class="section-header">
+                <span class="material-symbols-outlined section-icon">inventory_2</span>
+                <h2 class="section-title">Gestão de Produtos</h2>
+            </div>
+
+            <div class="panel-grid">
+                <a href="/wp-admin/post-new.php?post_type=product" class="panel-card">
+                    <span class="card-badge">Novo</span>
+                    <span class="material-symbols-outlined card-icon">add_box</span>
+                    <h3 class="card-title">Adicionar Produto</h3>
+                    <p class="card-description">Cadastre novos produtos na sua loja</p>
+                </a>
+
+                <a href="/wp-admin/edit.php?post_type=product" class="panel-card">
+                    <span class="material-symbols-outlined card-icon">inventory</span>
+                    <h3 class="card-title">Lista de Produtos</h3>
+                    <p class="card-description">Visualize e edite todos os produtos</p>
+                </a>
+
+                <a href="/wp-admin/edit-tags.php?taxonomy=product_cat&post_type=product" class="panel-card">
+                    <span class="material-symbols-outlined card-icon">category</span>
+                    <h3 class="card-title">Categorias</h3>
+                    <p class="card-description">Organize produtos por categorias</p>
+                </a>
+
+                <a href="/wp-admin/edit-tags.php?taxonomy=product_brand&post_type=product" class="panel-card">
+                    <span class="material-symbols-outlined card-icon">brand_family</span>
+                    <h3 class="card-title">Marcas</h3>
+                    <p class="card-description">Gerencie marcas de produtos</p>
+                </a>
+
+                <a href="/wp-admin/edit.php?post_type=product&page=product-reviews" class="panel-card">
+                    <span class="material-symbols-outlined card-icon">star_rate</span>
+                    <h3 class="card-title">Avaliações</h3>
+                    <p class="card-description">Modere reviews dos clientes</p>
+                </a>
+
+                <a href="/wp-admin/admin.php?page=wc-settings&tab=shipping" class="panel-card">
+                    <span class="material-symbols-outlined card-icon">local_shipping</span>
+                    <h3 class="card-title">Frete</h3>
+                    <p class="card-description">Configure opções de entrega</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Gestão de Pedidos -->
+        <section class="panel-section">
+            <div class="section-header">
+                <span class="material-symbols-outlined section-icon">shopping_cart</span>
+                <h2 class="section-title">Gestão de Pedidos</h2>
+            </div>
+
+            <div class="panel-grid">
+                <a href="/wp-admin/admin.php?page=wc-orders" class="panel-card">
+                    <span class="material-symbols-outlined card-icon">receipt_long</span>
+                    <h3 class="card-title">Todos os Pedidos</h3>
+                    <p class="card-description">Visualize e gerencie pedidos</p>
+                </a>
+
+                <a href="/wp-admin/admin.php?page=wc-orders&status=processing" class="panel-card">
+                    <span class="card-badge">Ativo</span>
+                    <span class="material-symbols-outlined card-icon">pending_actions</span>
+                    <h3 class="card-title">Em Processamento</h3>
+                    <p class="card-description">Pedidos aguardando envio</p>
+                </a>
+
+                <a href="/wp-admin/admin.php?page=wc-admin&path=%2Fcustomers" class="panel-card">
+                    <span class="material-symbols-outlined card-icon">group</span>
+                    <h3 class="card-title">Clientes</h3>
+                    <p class="card-description">Gerencie sua base de clientes</p>
+                </a>
+
+                <a href="/wp-admin/admin.php?page=wc-reports" class="panel-card">
+                    <span class="material-symbols-outlined card-icon">analytics</span>
+                    <h3 class="card-title">Relatórios</h3>
+                    <p class="card-description">Análises e métricas de vendas</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Gestão do Site -->
+        <section class="panel-section">
+            <div class="section-header">
+                <span class="material-symbols-outlined section-icon">web</span>
+                <h2 class="section-title">Gestão do Site</h2>
+            </div>
+
+            <div class="panel-grid">
+                <a href="/wp-admin/post-new.php?post_type=banners_homepage" class="panel-card">
+                    <span class="card-badge">Novo</span>
+                    <span class="material-symbols-outlined card-icon">add_photo_alternate</span>
+                    <h3 class="card-title">Adicionar Banner</h3>
+                    <p class="card-description">Crie banners para homepage</p>
+                </a>
+
+                <a href="/wp-admin/edit.php?post_type=banners_homepage" class="panel-card">
+                    <span class="material-symbols-outlined card-icon">collections</span>
+                    <h3 class="card-title">Lista de Banners</h3>
+                    <p class="card-description">Gerencie banners existentes</p>
+                </a>
+
+                <a href="/wp-admin/admin.php?page=configuracoes_opt" class="panel-card">
+                    <span class="material-symbols-outlined card-icon">tune</span>
+                    <h3 class="card-title">Configurações</h3>
+                    <p class="card-description">Dados, textos e preferências</p>
+                </a>
+
+                <a href="/wp-admin/customize.php" class="panel-card">
+                    <span class="material-symbols-outlined card-icon">palette</span>
+                    <h3 class="card-title">Aparência</h3>
+                    <p class="card-description">Personalize o visual da loja</p>
+                </a>
+
+                <a href="/wp-admin/options-permalink.php" class="panel-card">
+                    <span class="material-symbols-outlined card-icon">link</span>
+                    <h3 class="card-title">Links Permanentes</h3>
+                    <p class="card-description">Configure estrutura de URLs</p>
+                </a>
+
+                <a href="/wp-admin/admin.php?page=wc-settings" class="panel-card">
+                    <span class="material-symbols-outlined card-icon">settings</span>
+                    <h3 class="card-title">WooCommerce</h3>
+                    <p class="card-description">Configurações da loja</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Marketing & Ferramentas -->
+        <section class="panel-section">
+            <div class="section-header">
+                <span class="material-symbols-outlined section-icon">campaign</span>
+                <h2 class="section-title">Marketing & Ferramentas</h2>
+            </div>
+
+            <div class="panel-grid">
+                <a href="/wp-admin/edit.php?post_type=shop_coupon" class="panel-card">
+                    <span class="material-symbols-outlined card-icon">local_offer</span>
+                    <h3 class="card-title">Cupons</h3>
+                    <p class="card-description">Crie cupons de desconto</p>
+                </a>
+
+                <a href="/wp-admin/admin.php?page=mailpoet-newsletters" class="panel-card">
+                    <span class="material-symbols-outlined card-icon">mail</span>
+                    <h3 class="card-title">E-mail Marketing</h3>
+                    <p class="card-description">Envie campanhas aos clientes</p>
+                </a>
+
+                <a href="/wp-admin/admin.php?page=wc-admin&path=/marketing" class="panel-card">
+                    <span class="material-symbols-outlined card-icon">trending_up</span>
+                    <h3 class="card-title">Marketing</h3>
+                    <p class="card-description">Estratégias de crescimento</p>
+                </a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,258 @@
+/**
+ * Exemplo de CSS Customizado (CSS #3)
+ *
+ * Use este arquivo como referência para criar customizações extras
+ * que sobrescrevem Bricks ou valores inline do HTML
+ *
+ * Upload no GitHub e use como CSS #3 no plugin
+ */
+
+/* ============================================
+   OPÇÃO 1: Sobrescrever Apenas Variáveis
+   ============================================ */
+
+:root {
+    /* Ajustar cores específicas */
+    --primary: #0066cc;           /* Muda primary mas mantém resto do Bricks */
+    --secondary: #ff6600;         /* Muda secondary */
+
+    /* Ajustar espaçamentos */
+    --space-xl: 4rem;             /* Mais espaçamento entre seções */
+    --space-l: 2.5rem;
+
+    /* Ajustar border radius */
+    --radius-l: 40px;             /* Cards mais arredondados */
+    --radius-pill: 50px;          /* Badges mais arredondados */
+
+    /* Ajustar tipografia */
+    --h1: 3.5rem;                 /* Título maior */
+    --text-l: 1.3rem;             /* Textos de card maiores */
+}
+
+/* ============================================
+   OPÇÃO 2: Estilos Específicos do Dashboard
+   ============================================ */
+
+/* Aumentar ícones dos cards */
+.card-icon {
+    font-size: 5rem !important;
+}
+
+/* Mudar cor de hover dos cards */
+.card:hover .card-icon {
+    color: #ff6600 !important;    /* Laranja no hover */
+}
+
+/* Adicionar sombra mais forte nos cards */
+.card:hover {
+    box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Mudar estilo dos badges */
+.badge {
+    background: linear-gradient(135deg, #ff6600 0%, #ff8800 100%);
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.9rem;
+}
+
+/* ============================================
+   OPÇÃO 3: Customizações por Seção
+   ============================================ */
+
+/* Header com gradiente diferente */
+.dash-header {
+    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+    padding: 3rem 1.5rem;
+    border-radius: 0 0 30px 30px;
+}
+
+/* Título com efeito especial */
+.dash-title {
+    background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 10px rgba(0, 102, 204, 0.2);
+}
+
+/* Linha de separação das seções customizada */
+.section-header {
+    border-bottom: 3px solid;
+    border-image: linear-gradient(90deg, #0066cc 0%, #ff6600 100%) 1;
+}
+
+/* ============================================
+   OPÇÃO 4: Modo Escuro (Exemplo)
+   ============================================ */
+
+/* Descomente para ativar modo escuro */
+/*
+:root {
+    --white: #1a1a1a;
+    --base-light: #2d2d2d;
+    --base: #e0e0e0;
+    --base-dark: #ffffff;
+    --base-ultra-dark: #ffffff;
+    --heading-color: #ffffff;
+    --text-color: #e0e0e0;
+}
+
+.dash-wrap {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.card {
+    background: #2d2d2d;
+    border: 1px solid #404040;
+}
+
+.section-header {
+    border-bottom-color: rgba(0, 102, 204, 0.5);
+}
+*/
+
+/* ============================================
+   OPÇÃO 5: Animações Extras
+   ============================================ */
+
+/* Animação de entrada suave */
+.card {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cards aparecem em sequência */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+.card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Pulso no badge */
+.badge {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* ============================================
+   OPÇÃO 6: Responsivo Custom
+   ============================================ */
+
+/* Mobile: Cards maiores */
+@media (max-width: 768px) {
+    .card {
+        padding: 2rem;
+        min-height: 180px;
+    }
+
+    .card-icon {
+        font-size: 4.5rem !important;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* Desktop grande: Grid 4 colunas para produtos */
+@media (min-width: 1400px) {
+    .section:first-of-type .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ============================================
+   OPÇÃO 7: Print Styles (Impressão)
+   ============================================ */
+
+@media print {
+    .badge {
+        background: #000 !important;
+        color: #fff !important;
+    }
+
+    .card {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+
+    .card::before {
+        display: none;
+    }
+}
+
+/* ============================================
+   OPÇÃO 8: Acessibilidade
+   ============================================ */
+
+/* Aumentar contraste para acessibilidade */
+@media (prefers-contrast: high) {
+    :root {
+        --primary: #0052a3;           /* Azul mais escuro */
+        --text-color: #000000;        /* Texto preto puro */
+    }
+
+    .card {
+        border: 2px solid #000;
+    }
+}
+
+/* Reduzir movimento para quem prefere */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+   DICAS DE USO
+   ============================================ */
+
+/*
+COMO USAR:
+
+1. Escolha uma das opções acima ou combine várias
+2. Faça upload deste arquivo no GitHub
+3. Configure no WordPress:
+
+   CSS 1: global-variables.min.css (Bricks)
+   CSS 2: color-palettes.min.css (Bricks)
+   CSS 3: https://raw.githubusercontent.com/.../custom.css (este arquivo)
+
+4. Salve e veja as mudanças!
+
+ORDEM DE CARREGAMENTO:
+HTML inline → CSS 1 → CSS 2 → CSS 3 (este arquivo)
+                                  ↑
+                        Sobrescreve tudo!
+
+TESTES:
+- Sempre teste localmente primeiro
+- Use DevTools (F12) para ver variáveis aplicadas
+- Limpe cache após mudanças
+*/
